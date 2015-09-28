@@ -23,7 +23,7 @@
 		z-index: 3000
 	}
 
-	div#message h3 {
+	div#message p {
 		background-color: #ddd;
 		font-family: sans-serif;
 		color: #033;
@@ -31,23 +31,32 @@
 		padding: .5em;
 	}
 
-	div#message textareat {
+	div#message textarea {
 		overflow: auto;
 		white-space: pre-wrap;
-		padding: .5em;
+		padding: 1em;
 		font-family: monospace;
 		width: 100%;
+		height: calc(100% - 4.5em);
 		box-sizing: border-box;
 	}
 
 	div#message div#handle {
+		padding: 0;
 		position: absolute;
-		width: 24px;
-		height: 24px;
-		right: 0;
-		bottom: 0;
+		width: .5em;
+		height: .5em;
+		right: .25em;
+		bottom: .25em;
 		background-color: red;
 		border: thin solid red;
+		border-radius: 4px;
+		background-color: #ddd;
+		border: #999;
+		box-shadow:
+			inset 4px 4px 4px #999,
+			inset -4px -4px 4px #eee;
+		cursor: nwse-resize;
 	}
 
 /*	Additional
@@ -84,13 +93,16 @@
 	div#message textarea {
 		border-radius: 8px;
 		box-shadow: inset 4px 4px 2px #999, inset -4px -4px 4px white;
-		padding: 4px;
 	}
 
 
-	div#message h3 {
+	div#message p {
 		color: #666;
 		border-radius: 4px;
 		box-shadow: inset 4px 4px 2px #999, inset -4px -4px 4px white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.2em;
+		margin-bottom: .75em;
 	}
 

@@ -7,6 +7,8 @@
 
 	================================================ */
 
+	'use strict';
+
 	/*	Main Function
 		================================================ */
 
@@ -15,11 +17,13 @@
 //			div.style.cssText='';
 				document.body.appendChild(div);
 
-			var title=document.createElement('div');
-				var heading=document.createElement('h3');
-					heading.innerHTML="The Message";
+			var title=document.createElement('p');
+				title.innerHTML='The Message';
+//				title.setAttribute
+//				var heading=document.createElement('h3');
+//					heading.innerHTML="The Message";
 //				heading.style.cssText='';
-				title.appendChild(heading);
+//				title.appendChild(heading);
 
 			var content=document.createElement('textarea');
 //			content.style.cssText='';
@@ -28,7 +32,6 @@
 				handle.setAttribute('id','handle');
 //				handle.style.cssText='';
 
-
 			document.body.appendChild(div);
 
 			div.appendChild(title);
@@ -36,9 +39,11 @@
 			div.appendChild(handle);
 			div.setAttribute('id','message');
 
-			draggable(div,title);
-			content.style.width=div.offsetWidth-2+'px';
-			content.style.height=div.offsetHeight-title.offsetHeight-2+'px';
+			draggable(div);
+				stretchable(div,handle);
+
+//			content.style.width=div.offsetWidth-2+'px';
+//			content.style.height=div.offsetHeight-title.offsetHeight-2+'px';
 
 			say=function(message) {
 				if(message===undefined) content.textContent='';
@@ -46,7 +51,7 @@
 				//	log
 
 				log(message);
-			}
+			};
 			say(message);
 		}
 
@@ -68,7 +73,7 @@
 	/*	Draggable
 		================================================ */
 
-		function draggable(element,handle) {
+		function stretchable(element,handle) {
 			element.style.position='fixed';
 			activateDrag();
 
@@ -85,49 +90,49 @@
 			function startDrag(e) {
 				var event=e||window.event;
 				var target=e.target||e.srcElement;
-				var left, top, startX, startY;
+				var left, top, startX, startY, startW, startH;
 //				if(target!=handle) return;
 				//	Element & Mouse Position
 					left=element.offsetLeft;					//	Element Position
 					top =element.offsetTop;
+					element.style.left=left+'px';
+					element.style.top=top+'px';
 					startX=event.clientX;
 				//	Mouse Position
 					startY=event.clientY;
+				//	Dimensions
+					startW=element.clientWidth;
+					startH=element.clientHeight;
 
 				//	Enable Drag & Drop Events
 					document.onmousemove=drag;
 					document.onmouseup=release;
-
-				//	Change Appearance
-					element.style.cursor='move';
-					element.style.opacity='.60';
-					element.style.filter='alpha(opacity=60)';
+					event.stopPropagation();
 				return false;
 
 				function drag(e) {
 					var event=e||window.event;
-					var position={"left":left+event.clientX-startX,"top":top+event.clientY-startY};
-					element.style.left=position.left + 'px';
-					element.style.top =position.top + 'px';
-					sessionStorage.setItem('left',position.left);
-					sessionStorage.setItem('top',position.top);
+//					var position={"left":left+event.clientX-startX,"top":top+event.clientY-startY};
+					var newWidth=startW+event.clientX-startX;
+					var newHeight=startH+event.clientY-startY;
+						element.style.width=newWidth+'px';
+						element.style.height=newHeight+'px';
+//					sessionStorage.setItem('left',position.left);
+//					sessionStorage.setItem('top',position.top);
 					return false;
 				}
 				function release(e) {
 					document.onmousemove=null;
 					document.onmouseup=null;
-					element.style.opacity=element.style.filter=null;
-					element.style.cursor=null;
 				}
 			}
 		}
 
 	/*	Stretchable
 		================================================ */
-		function strechable(element,handle) {
+		function draggable(element,handle) {
 			element.style.position='fixed';
 			activateDrag();
-
 			function activateDrag() {
 				var left,top;
 				if(handle) handle.onmousedown=startDrag;
@@ -139,7 +144,7 @@
 			}
 			function startDrag(e) {
 				var event=e||window.event;
-				var target=e.target||e.srcElement;
+//				var target=e.target||e.srcElement;
 				var left, top, startX, startY;
 //				if(target!=handle) return;
 				//	Element & Mouse Position
