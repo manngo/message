@@ -7,3 +7,90 @@
 
 	================================================ */
 
+/*	From JavaScript
+	================================================ */
+
+	div#message {
+		width: 320px;
+		height: 480px;
+		position: fixed;
+		right: 40px;
+		top: 20px;
+		white-space: pre-wrap;
+		border: thin solid #666;
+		box-shadow: 4px 4px 4px #666;
+		background-color: white;
+		z-index: 3000
+	}
+
+	div#message h3 {
+		background-color: #ddd;
+		font-family: sans-serif;
+		color: #033;
+		margin: 0;
+		padding: .5em;
+	}
+
+	div#message textareat {
+		overflow: auto;
+		white-space: pre-wrap;
+		padding: .5em;
+		font-family: monospace;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	div#message div#handle {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		right: 0;
+		bottom: 0;
+		background-color: red;
+		border: thin solid red;
+	}
+
+/*	Additional
+	================================================ */
+
+	div#message, div#message div#title {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	div#message {
+		padding: 1em;
+		background-color: #f8f8f8;
+		background-color: #ddd !important;
+		border: thin solid #666;
+	}
+	div#message div {
+		font-size: 1.2em;
+		text-align: center;
+		font-family: sans-serif;
+		font-weight: bold;
+		margin: 0;
+		padding: .75em;
+	}
+
+/*	Fancy
+	================================================ */
+
+	div#message {
+		border-radius: 8px;
+		box-shadow: inset 4px 4px 2px white, inset -4px -4px 4px #999, 4px 4px 4px #000;
+	}
+
+	div#message textarea {
+		border-radius: 8px;
+		box-shadow: inset 4px 4px 2px #999, inset -4px -4px 4px white;
+		padding: 4px;
+	}
+
+
+	div#message h3 {
+		color: #666;
+		border-radius: 4px;
+		box-shadow: inset 4px 4px 2px #999, inset -4px -4px 4px white;
+	}
+

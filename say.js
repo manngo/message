@@ -12,33 +12,21 @@
 
 		function say(message) {
 			var div=document.createElement('div');
-			div.style.cssText='width: 320px; height: 480px;\
-				 position: fixed; right: 40px; top: 20px; white-space: pre-wrap;\
-				border: thin solid #666;\
-				box-shadow: 4px 4px 4px #666; background-color: white;\
-				z-index: 3000';
+//			div.style.cssText='';
 				document.body.appendChild(div);
 
 			var title=document.createElement('div');
 				var heading=document.createElement('h3');
 					heading.innerHTML="The Message";
-				heading.style.cssText='background-color: #ddd;\
-					font-family: sans-serif; color: #033;\
-					margin: 0; padding: .5em;';
+//				heading.style.cssText='';
 				title.appendChild(heading);
 
 			var content=document.createElement('textarea');
-			content.style.cssText='overflow: auto;\
-				white-space: pre-wrap;\
-				padding: .5em; font-family: monospace;\
-				width: 100%;\
-				box-sizing: border-box;';
+//			content.style.cssText='';
 
 			var handle=document.createElement('div');
-				handle.style.cssText='position: absolute;\
-				width: 24px; height: 24px;\
-				right: 0; bottom: 0;\
-				background-color: red; border: thin solid red;';
+				handle.setAttribute('id','handle');
+//				handle.style.cssText='';
 
 
 			document.body.appendChild(div);
