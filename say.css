@@ -59,6 +59,22 @@
 		cursor: nwse-resize;
 	}
 
+	div#message div#close {
+		padding: 0;
+		position: absolute;
+		width: .5em;
+		height: .5em;
+		left: .25em;
+		top: .25em;
+		background-color: red;
+		border-radius: 4px;
+		background-color: red;
+		box-shadow:
+			inset 4px 4px 4px #900,
+			inset -4px -4px 4px #e00;
+		cursor: default;
+	}
+
 /*	Additional
 	================================================ */
 
@@ -105,4 +121,3 @@
 		font-size: 1.2em;
 		margin-bottom: .75em;
 	}
-

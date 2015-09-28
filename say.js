@@ -32,10 +32,18 @@
 				handle.setAttribute('id','handle');
 //				handle.style.cssText='';
 
+			var close=document.createElement('div');
+				close.setAttribute('id','close');
+				close.onclick=function() {
+					div.style.display='none';
+				};
+
+
 			document.body.appendChild(div);
 
 			div.appendChild(title);
 			div.appendChild(content);
+			div.appendChild(close);
 			div.appendChild(handle);
 			div.setAttribute('id','message');
 
@@ -46,6 +54,7 @@
 //			content.style.height=div.offsetHeight-title.offsetHeight-2+'px';
 
 			say=function(message) {
+				div.style.display='block';
 				if(message===undefined) content.textContent='';
 				else content.textContent+=message+'\n';
 				//	log
