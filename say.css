@@ -85,8 +85,7 @@
 
 	div#message {
 		padding: 1em;
-		background-color: #f8f8f8;
-		background-color: #ddd !important;
+		background-color: #ddd;
 		border: thin solid #666;
 	}
 	div#message div {
@@ -102,20 +101,27 @@
 	================================================ */
 
 	div#message {
-		border-radius: 8px;
-		box-shadow: inset 4px 4px 2px white, inset -4px -4px 4px #999, 4px 4px 4px #000;
+		border-radius: 4px;
+		box-shadow:
+			inset 3px 3px 2px #f8f8f8,
+			inset -3px -3px 4px #999,
+			4px 4px 4px #666;
 	}
 
 	div#message textarea {
-		border-radius: 8px;
-		box-shadow: inset 4px 4px 2px #999, inset -4px -4px 4px white;
+		border-radius: 4px;
+		box-shadow:
+			inset 2px 2px 2px #ccc,
+			inset -4px -4px 4px #f8f8f8;
 	}
 
 
 	div#message p {
 		color: #666;
 		border-radius: 4px;
-		box-shadow: inset 4px 4px 2px #999, inset -4px -4px 4px white;
+		box-shadow:
+			inset 2px 2px 2px #999,
+			inset -2px -2px 4px #f8f8f8;
 		text-align: center;
 		font-weight: bold;
 		font-size: 1.2em;

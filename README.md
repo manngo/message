@@ -10,6 +10,8 @@ The issues with `alert()` which prompted this function are:
 
 You may notice that the function and corresponding files are called “say”. When I think of a better name, this will, of course, change.
 
+I thought of calling it “Alert” (with a capital “A”), but that’s probably too subtle.
+
 Features
 --------
 
@@ -42,6 +44,7 @@ Don’t forget to include the appropriate folders.
 You don’t need one, as the function initialises itself on first usage. You might try this:
 
 ```js
+window.onload=init;
 function init() {
 	say('Hello');
 }
@@ -57,4 +60,5 @@ The following are on the list:
 - Find a better way of including the required CSS
 - This includes removing the `id`
 - Speaking of which allow your own `id` for the message
+- Fix up storage of settings
 
